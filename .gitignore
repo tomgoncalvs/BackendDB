@@ -1,1 +1,7 @@
 .env
+__pycache__/app.cpython-312.pyc
+app/__pycache__/__init__.cpython-312.pyc
+app/__pycache__/dboracle.cpython-312.pyc
+app/__pycache__/mongodb.cpython-312.pyc
+app/__pycache__/routes.cpython-312.pyc
+config/__pycache__/settings.cpython-312.pyc
