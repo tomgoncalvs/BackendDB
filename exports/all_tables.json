@@ -1,0 +1,887 @@
+{
+    "tb_app_fornecedores": [
+        {
+            "fornecedor_id": 3,
+            "nome": "Solar Power",
+            "email": "solarpower@example.com",
+            "telefone": "11987654321",
+            "endereco": "Avenida Paulista, 1000",
+            "data_cadastro": "2024-11-09",
+            "_id": 3
+        },
+        {
+            "fornecedor_id": 4,
+            "nome": "Green Energy",
+            "email": "greenenergy@example.com",
+            "telefone": "11876543210",
+            "endereco": "Rua da Liberdade, 500",
+            "data_cadastro": "2024-11-09",
+            "_id": 4
+        },
+        {
+            "fornecedor_id": 5,
+            "nome": "Eco Wind",
+            "email": "ecowind@example.com",
+            "telefone": "11911223344",
+            "endereco": "Av. Rio Branco, 900",
+            "data_cadastro": "2024-11-09",
+            "_id": 5
+        },
+        {
+            "fornecedor_id": 6,
+            "nome": "Hydro Solutions",
+            "email": "hydrosolutions@example.com",
+            "telefone": "11933445566",
+            "endereco": "Rua das Palmeiras, 222",
+            "data_cadastro": "2024-11-09",
+            "_id": 6
+        },
+        {
+            "fornecedor_id": 7,
+            "nome": "SunPower",
+            "email": "sunpower@example.com",
+            "telefone": "11955667788",
+            "endereco": "Rua Augusta, 1010",
+            "data_cadastro": "2024-11-09",
+            "_id": 7
+        },
+        {
+            "fornecedor_id": 8,
+            "nome": "Renewable Co",
+            "email": "renewableco@example.com",
+            "telefone": "11999887766",
+            "endereco": "Avenida Faria Lima, 200",
+            "data_cadastro": "2024-11-09",
+            "_id": 8
+        },
+        {
+            "fornecedor_id": 9,
+            "nome": "Bio Energy",
+            "email": "bioenergy@example.com",
+            "telefone": "11988776655",
+            "endereco": "Rua da Consolação, 850",
+            "data_cadastro": "2024-11-09",
+            "_id": 9
+        },
+        {
+            "fornecedor_id": 10,
+            "nome": "E-Wind",
+            "email": "ewind@example.com",
+            "telefone": "11977665544",
+            "endereco": "Rua Bela Cintra, 300",
+            "data_cadastro": "2024-11-09",
+            "_id": 10
+        },
+        {
+            "fornecedor_id": 11,
+            "nome": "PowerGrid",
+            "email": "powergrid@example.com",
+            "telefone": "11966554433",
+            "endereco": "Av. Ipiranga, 70",
+            "data_cadastro": "2024-11-09",
+            "_id": 11
+        },
+        {
+            "fornecedor_id": 12,
+            "nome": "EnergyPlus",
+            "email": "energyplus@example.com",
+            "telefone": "11955443322",
+            "endereco": "Rua Oscar Freire, 505",
+            "data_cadastro": "2024-11-09",
+            "_id": 12
+        }
+    ],
+    "tb_app_clientes": [
+        {
+            "cliente_id": 1,
+            "nome": "João Silva",
+            "email": "joao.silva@example.com",
+            "telefone": "11911223344",
+            "endereco": "Rua dos Jacarandás, 100",
+            "data_cadastro": "2024-11-09",
+            "_id": 1
+        },
+        {
+            "cliente_id": 2,
+            "nome": "Maria Oliveira",
+            "email": "maria.oliveira@example.com",
+            "telefone": "11922334455",
+            "endereco": "Av. das Oliveiras, 200",
+            "data_cadastro": "2024-11-09",
+            "_id": 2
+        },
+        {
+            "cliente_id": 3,
+            "nome": "Pedro Souza",
+            "email": "pedro.souza@example.com",
+            "telefone": "11933445566",
+            "endereco": "Rua das Flores, 300",
+            "data_cadastro": "2024-11-09",
+            "_id": 3
+        },
+        {
+            "cliente_id": 4,
+            "nome": "Ana Costa",
+            "email": "ana.costa@example.com",
+            "telefone": "11944556677",
+            "endereco": "Rua do Sol, 400",
+            "data_cadastro": "2024-11-09",
+            "_id": 4
+        },
+        {
+            "cliente_id": 5,
+            "nome": "Lucas Santos",
+            "email": "lucas.santos@example.com",
+            "telefone": "11955667788",
+            "endereco": "Av. das Palmeiras, 500",
+            "data_cadastro": "2024-11-09",
+            "_id": 5
+        },
+        {
+            "cliente_id": 6,
+            "nome": "Fernanda Lima",
+            "email": "fernanda.lima@example.com",
+            "telefone": "11966778899",
+            "endereco": "Rua do Mar, 600",
+            "data_cadastro": "2024-11-09",
+            "_id": 6
+        },
+        {
+            "cliente_id": 7,
+            "nome": "Rafael Almeida",
+            "email": "rafael.almeida@example.com",
+            "telefone": "11977889900",
+            "endereco": "Rua do Vento, 700",
+            "data_cadastro": "2024-11-09",
+            "_id": 7
+        },
+        {
+            "cliente_id": 8,
+            "nome": "Juliana Martins",
+            "email": "juliana.martins@example.com",
+            "telefone": "11988990011",
+            "endereco": "Rua da Brisa, 800",
+            "data_cadastro": "2024-11-09",
+            "_id": 8
+        },
+        {
+            "cliente_id": 9,
+            "nome": "Carlos Pereira",
+            "email": "carlos.pereira@example.com",
+            "telefone": "11999001122",
+            "endereco": "Rua da Luz, 900",
+            "data_cadastro": "2024-11-09",
+            "_id": 9
+        },
+        {
+            "cliente_id": 10,
+            "nome": "Renata Gonçalves",
+            "email": "renata.goncalves@example.com",
+            "telefone": "11910112233",
+            "endereco": "Av. Energia, 1000",
+            "data_cadastro": "2024-11-09",
+            "_id": 10
+        }
+    ],
+    "tb_app_estoqueEnergia": [
+        {
+            "estoque_id": 12,
+            "energia_id": 2,
+            "dispositivo_id": "DISP_SOLAR01",
+            "quantidade_armazenada": 1200,
+            "data_atualizacao": "2024-11-09",
+            "_id": 2
+        },
+        {
+            "estoque_id": 13,
+            "energia_id": 3,
+            "dispositivo_id": "DISP_SOLAR02",
+            "quantidade_armazenada": 1500,
+            "data_atualizacao": "2024-11-09",
+            "_id": 3
+        },
+        {
+            "estoque_id": 14,
+            "energia_id": 4,
+            "dispositivo_id": "DISP_SOLAR03",
+            "quantidade_armazenada": 1300,
+            "data_atualizacao": "2024-11-09",
+            "_id": 4
+        },
+        {
+            "estoque_id": 15,
+            "energia_id": 5,
+            "dispositivo_id": "DISP_SOLAR04",
+            "quantidade_armazenada": 1100,
+            "data_atualizacao": "2024-11-09",
+            "_id": 5
+        },
+        {
+            "estoque_id": 16,
+            "energia_id": 6,
+            "dispositivo_id": "DISP_SOLAR05",
+            "quantidade_armazenada": 1400,
+            "data_atualizacao": "2024-11-09",
+            "_id": 6
+        },
+        {
+            "estoque_id": 17,
+            "energia_id": 7,
+            "dispositivo_id": "DISP_SOLAR06",
+            "quantidade_armazenada": 1250,
+            "data_atualizacao": "2024-11-09",
+            "_id": 7
+        },
+        {
+            "estoque_id": 18,
+            "energia_id": 8,
+            "dispositivo_id": "DISP_SOLAR07",
+            "quantidade_armazenada": 1350,
+            "data_atualizacao": "2024-11-09",
+            "_id": 8
+        },
+        {
+            "estoque_id": 19,
+            "energia_id": 9,
+            "dispositivo_id": "DISP_SOLAR08",
+            "quantidade_armazenada": 1150,
+            "data_atualizacao": "2024-11-09",
+            "_id": 9
+        },
+        {
+            "estoque_id": 20,
+            "energia_id": 10,
+            "dispositivo_id": "DISP_SOLAR09",
+            "quantidade_armazenada": 1450,
+            "data_atualizacao": "2024-11-09",
+            "_id": 10
+        },
+        {
+            "estoque_id": 21,
+            "energia_id": 11,
+            "dispositivo_id": "DISP_SOLAR10",
+            "quantidade_armazenada": 1000,
+            "data_atualizacao": "2024-11-09",
+            "_id": 11
+        }
+    ],
+    "tb_app_transacao": [
+        {
+            "transacao_id": 11,
+            "tipo_transacao": "Compra",
+            "quantidade": 100,
+            "valor_total": 45,
+            "data_transacao": "2024-11-09",
+            "cliente_id": 1,
+            "energia_id": 2,
+            "blockchain_hash": "hash_transacao_1",
+            "status_blockchain": "Confirmada",
+            "_id": 1
+        },
+        {
+            "transacao_id": 12,
+            "tipo_transacao": "Venda",
+            "quantidade": 150,
+            "valor_total": 705,
+            "data_transacao": "2024-11-09",
+            "cliente_id": 2,
+            "energia_id": 3,
+            "blockchain_hash": "hash_transacao_2",
+            "status_blockchain": "Pendente",
+            "_id": 2
+        },
+        {
+            "transacao_id": 13,
+            "tipo_transacao": "Compra",
+            "quantidade": 200,
+            "valor_total": 100,
+            "data_transacao": "2024-11-09",
+            "cliente_id": 3,
+            "energia_id": 4,
+            "blockchain_hash": "hash_transacao_3",
+            "status_blockchain": "Confirmada",
+            "_id": 3
+        },
+        {
+            "transacao_id": 14,
+            "tipo_transacao": "Venda",
+            "quantidade": 175,
+            "valor_total": 805,
+            "data_transacao": "2024-11-09",
+            "cliente_id": 4,
+            "energia_id": 5,
+            "blockchain_hash": "hash_transacao_4",
+            "status_blockchain": "Confirmada",
+            "_id": 4
+        },
+        {
+            "transacao_id": 15,
+            "tipo_transacao": "Compra",
+            "quantidade": 125,
+            "valor_total": 6125,
+            "data_transacao": "2024-11-09",
+            "cliente_id": 5,
+            "energia_id": 6,
+            "blockchain_hash": "hash_transacao_5",
+            "status_blockchain": "Confirmada",
+            "_id": 5
+        },
+        {
+            "transacao_id": 16,
+            "tipo_transacao": "Venda",
+            "quantidade": 130,
+            "valor_total": 624,
+            "data_transacao": "2024-11-09",
+            "cliente_id": 6,
+            "energia_id": 7,
+            "blockchain_hash": "hash_transacao_6",
+            "status_blockchain": "Pendente",
+            "_id": 6
+        },
+        {
+            "transacao_id": 17,
+            "tipo_transacao": "Compra",
+            "quantidade": 140,
+            "valor_total": 714,
+            "data_transacao": "2024-11-09",
+            "cliente_id": 7,
+            "energia_id": 8,
+            "blockchain_hash": "hash_transacao_7",
+            "status_blockchain": "Confirmada",
+            "_id": 7
+        },
+        {
+            "transacao_id": 18,
+            "tipo_transacao": "Venda",
+            "quantidade": 120,
+            "valor_total": 528,
+            "data_transacao": "2024-11-09",
+            "cliente_id": 8,
+            "energia_id": 9,
+            "blockchain_hash": "hash_transacao_8",
+            "status_blockchain": "Pendente",
+            "_id": 8
+        },
+        {
+            "transacao_id": 19,
+            "tipo_transacao": "Compra",
+            "quantidade": 160,
+            "valor_total": 752,
+            "data_transacao": "2024-11-09",
+            "cliente_id": 9,
+            "energia_id": 10,
+            "blockchain_hash": "hash_transacao_9",
+            "status_blockchain": "Confirmada",
+            "_id": 9
+        },
+        {
+            "transacao_id": 20,
+            "tipo_transacao": "Venda",
+            "quantidade": 110,
+            "valor_total": 506,
+            "data_transacao": "2024-11-09",
+            "cliente_id": 10,
+            "energia_id": 11,
+            "blockchain_hash": "hash_transacao_10",
+            "status_blockchain": "Confirmada",
+            "_id": 10
+        }
+    ],
+    "tb_audit_log": [
+        {
+            "audit_id": 67,
+            "table_name": "tb_app_transacao",
+            "action_type": "INSERT",
+            "record_id": 11,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 67
+        },
+        {
+            "audit_id": 68,
+            "table_name": "tb_app_transacao",
+            "action_type": "INSERT",
+            "record_id": 12,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 68
+        },
+        {
+            "audit_id": 69,
+            "table_name": "tb_app_transacao",
+            "action_type": "INSERT",
+            "record_id": 13,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 69
+        },
+        {
+            "audit_id": 70,
+            "table_name": "tb_app_transacao",
+            "action_type": "INSERT",
+            "record_id": 14,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 70
+        },
+        {
+            "audit_id": 71,
+            "table_name": "tb_app_transacao",
+            "action_type": "INSERT",
+            "record_id": 15,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 71
+        },
+        {
+            "audit_id": 72,
+            "table_name": "tb_app_transacao",
+            "action_type": "INSERT",
+            "record_id": 16,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 72
+        },
+        {
+            "audit_id": 73,
+            "table_name": "tb_app_transacao",
+            "action_type": "INSERT",
+            "record_id": 17,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 73
+        },
+        {
+            "audit_id": 74,
+            "table_name": "tb_app_transacao",
+            "action_type": "INSERT",
+            "record_id": 18,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 74
+        },
+        {
+            "audit_id": 75,
+            "table_name": "tb_app_transacao",
+            "action_type": "INSERT",
+            "record_id": 19,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 75
+        },
+        {
+            "audit_id": 76,
+            "table_name": "tb_app_transacao",
+            "action_type": "INSERT",
+            "record_id": 20,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 76
+        },
+        {
+            "audit_id": 77,
+            "table_name": "tb_app_transacao",
+            "action_type": "UPDATE",
+            "record_id": 13,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 77
+        },
+        {
+            "audit_id": 1,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "INSERT",
+            "record_id": 1,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 1
+        },
+        {
+            "audit_id": 2,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "INSERT",
+            "record_id": 2,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 2
+        },
+        {
+            "audit_id": 3,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "DELETE",
+            "record_id": 1,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 3
+        },
+        {
+            "audit_id": 4,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "DELETE",
+            "record_id": 2,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 4
+        },
+        {
+            "audit_id": 5,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "INSERT",
+            "record_id": 3,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 5
+        },
+        {
+            "audit_id": 6,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "INSERT",
+            "record_id": 4,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 6
+        },
+        {
+            "audit_id": 7,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "INSERT",
+            "record_id": 5,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 7
+        },
+        {
+            "audit_id": 8,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "INSERT",
+            "record_id": 6,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 8
+        },
+        {
+            "audit_id": 9,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "INSERT",
+            "record_id": 7,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 9
+        },
+        {
+            "audit_id": 10,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "INSERT",
+            "record_id": 8,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 10
+        },
+        {
+            "audit_id": 11,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "INSERT",
+            "record_id": 9,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 11
+        },
+        {
+            "audit_id": 12,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "INSERT",
+            "record_id": 10,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 12
+        },
+        {
+            "audit_id": 13,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "INSERT",
+            "record_id": 11,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 13
+        },
+        {
+            "audit_id": 14,
+            "table_name": "tb_app_fornecedores",
+            "action_type": "INSERT",
+            "record_id": 12,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 14
+        },
+        {
+            "audit_id": 15,
+            "table_name": "tb_app_clientes",
+            "action_type": "INSERT",
+            "record_id": 1,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 15
+        },
+        {
+            "audit_id": 16,
+            "table_name": "tb_app_clientes",
+            "action_type": "INSERT",
+            "record_id": 2,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 16
+        },
+        {
+            "audit_id": 17,
+            "table_name": "tb_app_clientes",
+            "action_type": "INSERT",
+            "record_id": 3,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 17
+        },
+        {
+            "audit_id": 18,
+            "table_name": "tb_app_clientes",
+            "action_type": "INSERT",
+            "record_id": 4,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 18
+        },
+        {
+            "audit_id": 19,
+            "table_name": "tb_app_clientes",
+            "action_type": "INSERT",
+            "record_id": 5,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 19
+        },
+        {
+            "audit_id": 20,
+            "table_name": "tb_app_clientes",
+            "action_type": "INSERT",
+            "record_id": 6,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 20
+        },
+        {
+            "audit_id": 21,
+            "table_name": "tb_app_clientes",
+            "action_type": "INSERT",
+            "record_id": 7,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 21
+        },
+        {
+            "audit_id": 22,
+            "table_name": "tb_app_clientes",
+            "action_type": "INSERT",
+            "record_id": 8,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 22
+        },
+        {
+            "audit_id": 23,
+            "table_name": "tb_app_clientes",
+            "action_type": "INSERT",
+            "record_id": 9,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 23
+        },
+        {
+            "audit_id": 24,
+            "table_name": "tb_app_clientes",
+            "action_type": "INSERT",
+            "record_id": 10,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 24
+        },
+        {
+            "audit_id": 26,
+            "table_name": "tb_app_energia",
+            "action_type": "INSERT",
+            "record_id": 2,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 26
+        },
+        {
+            "audit_id": 27,
+            "table_name": "tb_app_energia",
+            "action_type": "INSERT",
+            "record_id": 3,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 27
+        },
+        {
+            "audit_id": 28,
+            "table_name": "tb_app_energia",
+            "action_type": "INSERT",
+            "record_id": 4,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 28
+        },
+        {
+            "audit_id": 29,
+            "table_name": "tb_app_energia",
+            "action_type": "INSERT",
+            "record_id": 5,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 29
+        },
+        {
+            "audit_id": 30,
+            "table_name": "tb_app_energia",
+            "action_type": "INSERT",
+            "record_id": 6,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 30
+        },
+        {
+            "audit_id": 31,
+            "table_name": "tb_app_energia",
+            "action_type": "INSERT",
+            "record_id": 7,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 31
+        },
+        {
+            "audit_id": 32,
+            "table_name": "tb_app_energia",
+            "action_type": "INSERT",
+            "record_id": 8,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 32
+        },
+        {
+            "audit_id": 33,
+            "table_name": "tb_app_energia",
+            "action_type": "INSERT",
+            "record_id": 9,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 33
+        },
+        {
+            "audit_id": 34,
+            "table_name": "tb_app_energia",
+            "action_type": "INSERT",
+            "record_id": 10,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 34
+        },
+        {
+            "audit_id": 35,
+            "table_name": "tb_app_energia",
+            "action_type": "INSERT",
+            "record_id": 11,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 35
+        },
+        {
+            "audit_id": 47,
+            "table_name": "tb_app_estoqueEnergia",
+            "action_type": "INSERT",
+            "record_id": 12,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 47
+        },
+        {
+            "audit_id": 48,
+            "table_name": "tb_app_estoqueEnergia",
+            "action_type": "INSERT",
+            "record_id": 13,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 48
+        },
+        {
+            "audit_id": 49,
+            "table_name": "tb_app_estoqueEnergia",
+            "action_type": "INSERT",
+            "record_id": 14,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 49
+        },
+        {
+            "audit_id": 50,
+            "table_name": "tb_app_estoqueEnergia",
+            "action_type": "INSERT",
+            "record_id": 15,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 50
+        },
+        {
+            "audit_id": 51,
+            "table_name": "tb_app_estoqueEnergia",
+            "action_type": "INSERT",
+            "record_id": 16,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 51
+        },
+        {
+            "audit_id": 52,
+            "table_name": "tb_app_estoqueEnergia",
+            "action_type": "INSERT",
+            "record_id": 17,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 52
+        },
+        {
+            "audit_id": 53,
+            "table_name": "tb_app_estoqueEnergia",
+            "action_type": "INSERT",
+            "record_id": 18,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 53
+        },
+        {
+            "audit_id": 54,
+            "table_name": "tb_app_estoqueEnergia",
+            "action_type": "INSERT",
+            "record_id": 19,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 54
+        },
+        {
+            "audit_id": 55,
+            "table_name": "tb_app_estoqueEnergia",
+            "action_type": "INSERT",
+            "record_id": 20,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 55
+        },
+        {
+            "audit_id": 56,
+            "table_name": "tb_app_estoqueEnergia",
+            "action_type": "INSERT",
+            "record_id": 21,
+            "action_date": "2024-11-09",
+            "user_name": "RM98571",
+            "_id": 56
+        }
+    ]
+}

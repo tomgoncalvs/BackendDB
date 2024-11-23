@@ -1,4 +1,5 @@
-from flask import Blueprint, jsonify, request, current_app
+import os
+from flask import Blueprint, jsonify, request, current_app, send_file
 from app.dboracle import get_oracle_connection
 from app.mongodb import get_mongo_client
 import json
@@ -7,9 +8,21 @@ import uuid
 
 routes = Blueprint("routes", __name__)
 
+EXPORT_DIR = "exports"
+
 def log_message(message):
     """Função para centralizar logs no console."""
     current_app.logger.info(message)
+
+def save_json_to_file(data, file_name):
+    """Salva os dados JSON em um arquivo no diretório de exportação."""
+    if not os.path.exists(EXPORT_DIR):
+        os.makedirs(EXPORT_DIR)
+
+    file_path = os.path.join(EXPORT_DIR, file_name)
+    with open(file_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+    return file_path
 
 @routes.route('/migrate', methods=['POST'])
 def migrate_data():
@@ -51,39 +64,32 @@ def migrate_data():
 
         # Conectar ao MongoDB
         mongo_db = get_mongo_client()
-        collection = mongo_db["oracle_energy"]
+        collection = mongo_db[table_name]  # Usar o nome da tabela como nome da coleção
 
         # Inserir dados
-        new_data = []
         for record in json_data:
-            # Gerar _id único
+            # Usar o identificador único da tabela como _id
             unique_id = record.get("fornecedor_id") or record.get("cliente_id") or \
                         record.get("energia_id") or record.get("estoque_id") or \
                         record.get("transacao_id") or record.get("audit_id")
-            if not unique_id:
-                unique_id = str(uuid.uuid4())
-            record["_id"] = f"{table_name}_{unique_id}"
-            record["table_name"] = table_name
+            if unique_id:
+                record["_id"] = unique_id  # Usar o ID original como _id
+            else:
+                record["_id"] = str(uuid.uuid4())  # Gerar um UUID se não existir ID
 
-            # Verificar duplicidade
-            if not collection.find_one({"_id": record["_id"]}):
-                new_data.append(record)
+            # Inserir ou atualizar (upsert) o registro
+            collection.update_one({"_id": record["_id"]}, {"$set": record}, upsert=True)
 
-        if new_data:
-            collection.insert_many(new_data)
-            log_message(f"Inserted {len(new_data)} records into collection oracle_energy for table {table_name}")
-        else:
-            log_message(f"No new records to insert for table {table_name}")
+        log_message(f"Records processed for table {table_name}")
+
+        # Salvar os dados exportados como JSON
+        file_path = save_json_to_file(json_data, f"{table_name}.json")
 
         # Fechar conexões
         cursor.close()
         oracle_conn.close()
 
-        return jsonify({
-            "message": f"Migração da tabela {table_name} concluída.",
-            "exported_records": len(json_data),
-            "inserted_records": len(new_data),
-        })
+        return send_file(file_path, as_attachment=True)
 
     except Exception as e:
         log_message(f"Error during migration: {str(e)}")
@@ -102,12 +108,12 @@ def migrate_all_tables():
             "tb_audit_log"
         ]
 
-        migration_results = []
+        migration_results = {}
+        all_data = {}
 
         oracle_conn = get_oracle_connection()
         cursor = oracle_conn.cursor()
-        mongo_db = get_mongo_client()
-        collection = mongo_db["oracle_energy"]
+        mongo_db = get_mongo_client()  # Conectar ao banco de dados oracle_energy
 
         for table_name in tables_to_migrate:
             try:
@@ -123,12 +129,11 @@ def migrate_all_tables():
 
                 if not result:
                     log_message(f"No data found for table {table_name}")
-                    migration_results.append({
-                        "table_name": table_name,
+                    migration_results[table_name] = {
                         "status": "No data found",
                         "exported_records": 0,
                         "inserted_records": 0
-                    })
+                    }
                     continue
 
                 # Converter o CLOB para string
@@ -140,60 +145,48 @@ def migrate_all_tables():
                     json_data = json.loads(json_data)
                 except json.JSONDecodeError as e:
                     log_message(f"Error parsing JSON for table {table_name}: {str(e)}")
-                    migration_results.append({
-                        "table_name": table_name,
+                    migration_results[table_name] = {
                         "status": f"Error parsing JSON: {str(e)}",
                         "exported_records": 0,
                         "inserted_records": 0
-                    })
+                    }
                     continue
 
+                # Conectar à coleção específica
+                collection = mongo_db[table_name]
+
                 # Inserir dados
-                new_data = []
                 for record in json_data:
-                    # Gerar _id único
                     unique_id = record.get("fornecedor_id") or record.get("cliente_id") or \
                                 record.get("energia_id") or record.get("estoque_id") or \
                                 record.get("transacao_id") or record.get("audit_id")
-                    if not unique_id:
-                        unique_id = str(uuid.uuid4())
-                    record["_id"] = f"{table_name}_{unique_id}"
-                    record["table_name"] = table_name
+                    if unique_id:
+                        record["_id"] = unique_id  # Usar o ID original como _id
+                    else:
+                        record["_id"] = str(uuid.uuid4())
+                    collection.update_one({"_id": record["_id"]}, {"$set": record}, upsert=True)
 
-                    # Verificar duplicidade
-                    if not collection.find_one({"_id": record["_id"]}):
-                        new_data.append(record)
-
-                if new_data:
-                    collection.insert_many(new_data)
-                    log_message(f"Inserted {len(new_data)} records into collection oracle_energy for table {table_name}")
-                else:
-                    log_message(f"No new records to insert for table {table_name}")
-
-                migration_results.append({
-                    "table_name": table_name,
+                all_data[table_name] = json_data
+                migration_results[table_name] = {
                     "status": "Success",
                     "exported_records": len(json_data),
-                    "inserted_records": len(new_data)
-                })
+                }
 
             except Exception as table_error:
                 log_message(f"Error during migration for table {table_name}: {str(table_error)}")
-                migration_results.append({
-                    "table_name": table_name,
+                migration_results[table_name] = {
                     "status": f"Error: {str(table_error)}",
                     "exported_records": 0,
-                    "inserted_records": 0
-                })
+                }
+
+        # Salvar todos os dados exportados como JSON
+        file_path = save_json_to_file(all_data, "all_tables.json")
 
         # Fechar conexões
         cursor.close()
         oracle_conn.close()
 
-        return jsonify({
-            "message": "Migração de todas as tabelas concluída.",
-            "results": migration_results
-        })
+        return send_file(file_path, as_attachment=True)
 
     except Exception as e:
         log_message(f"Error during migration of all tables: {str(e)}")
